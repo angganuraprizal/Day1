@@ -106,7 +106,7 @@
 
                                 <div class="form-group {{ $errors->has('isi') ? ' has-error' : '' }}">
                                     <label class="control-label mb-10">isi</label>
-                                    <textarea id="text" type="ckeditor" name="isi" class="form-control" required>{{ $artikels->isi }}</textarea>
+                                    <textarea id="text" type="ckeditor" name="isi" class="ckeditor" required>{{ $artikels->isi }}</textarea>
                                     @if ($errors->has('isi'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('isi') }}</strong>

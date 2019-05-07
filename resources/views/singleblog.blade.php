@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>DevFolio Bootstrap Template</title>
+	<title>NEWS</title>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<meta content="" name="keywords">
 	<meta content="" name="description">
 	
 	<!-- Favicons -->
-	<link href="{{ asset('/devfolio/img/favicon.png') }}" rel="icon">
+	<link href="{{ asset('/img/news.png') }}" rel="icon">
 	<link href="{{ asset('/devfolio/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 	
 	<!-- Bootstrap CSS File -->
@@ -35,7 +35,7 @@
 	<!--/ Nav Star /-->
 	<nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
 		<div class="container">
-			<a class="navbar-brand js-scroll" href="{{ url('/') }}">DevFolio</a>
+			<a class="navbar-brand js-scroll" href="{{ url('/') }}">NEWS</a>
 			<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
 				aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
 			<span></span>
@@ -91,21 +91,24 @@
 							<h1 class="article-title">{{ $artikels->judul }}</h1>
 							<ul>
 								<li>
+									<span>Category</span>
+								</li>
+								<!-- <li>
 									<span class="ion-ios-person"></span>
 									<a href="#">Jason London</a>
-								</li>
+								</li> -->
 								<li>
 									<span class="ion-pricetag"></span>
 									<a href="#">{{ $artikels->kategori->nama }}</a>
 								</li>
-								<li>
+								<!-- <li>
 									<span class="ion-chatbox"></span>
 									<a href="#">14</a>
-								</li>
+								</li> -->
 							</ul>
 						</div>
 						<div class="article-content">
-							{{ $artikels->isi }}
+							{!! $artikels->isi !!}
 							<!-- <blockquote class="blockquote">
 								<p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
 							</blockquote>
@@ -241,9 +244,9 @@
 						<h5 class="sidebar-title">Recent Post</h5>
 						<div class="sidebar-content">
 							<ul class="list-sidebar">
-								@foreach($artikels as $data)
+								@foreach($blogs as $data)
 								<li>
-									<a href="#"> // </a>
+									<a href="/blog/{{$data->id}}"> {{ $data->judul }} </a>
 								</li>
 								@endforeach
 							</ul>

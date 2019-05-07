@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>DevFolio Bootstrap Template</title>
+	<title>NEWS</title>
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 	<meta content="" name="keywords">
 	<meta content="" name="description">
 	
 	<!-- Favicons -->
-	<link href="{{ asset('/devfolio/img/favicon.png') }}" rel="icon">
+	<link href="{{ asset('/img/news.png') }}" rel="icon">
 	<link href="{{ asset('/devfolio/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 	
 	<!-- Bootstrap CSS File -->
@@ -35,7 +35,7 @@
 	<!--/ Nav Star /-->
 	<nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
 		<div class="container">
-			<a class="navbar-brand js-scroll" href="{{ url('/') }}">DevFolio</a>
+			<a class="navbar-brand js-scroll" href="{{ url('/') }}">NEWS</a>
 			<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
 				aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
 			<span></span>
@@ -57,17 +57,17 @@
 	<!--/ Nav End /-->
 
 	<!--/ Intro Skew Star /-->
-	<div class="intro intro-single route bg-image" style="background-image: url(img/overlay-bg.jpg)">
+	<div class="intro intro-single route bg-image" style="background-image: url(/devfolio/img/overlay-bg.jpg)">
 		<div class="overlay-mf"></div>
 		<div class="intro-content display-table">
 			<div class="table-cell">
 				<div class="container">
-					<h2 class="intro-title mb-4">Berita</h2>
+					<h2 class="intro-title mb-4">News</h2>
 					<ol class="breadcrumb d-flex justify-content-center">
 						<li class="breadcrumb-item">
 							<a href="{{ url('/') }}">Home</a>
 						</li>
-						<li class="breadcrumb-item active">Berita</li>
+						<li class="breadcrumb-item active">News</li>
 					</ol>
 				</div>
 			</div>
@@ -104,6 +104,11 @@
 					</div>
 				</div>
 				@endforeach
+				<div class="col-md-5"></div>
+				<div class="col-md-2" align="center">
+					{{ $artikels->links() }}
+				</div>
+				<div class="col-md-5"></div>
 			</div>
 		</div>
 	</section>

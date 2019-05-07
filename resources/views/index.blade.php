@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>DevFolio</title>
+  <title>NEWS</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <!-- Favicons -->
-  <link href="{{ asset('/devfolio/img/favicon.png')}}" rel="icon">
+  <link href="{{ asset('/img/news.png')}}" rel="icon">
   <link href="{{ asset('/devfolio/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
   <!-- Bootstrap CSS File -->
@@ -37,7 +37,7 @@
 	<!--/ Nav Star /-->
 	<nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
 		<div class="container">
-			<a class="navbar-brand js-scroll" href="#page-top">DevFolio</a>
+			<a class="navbar-brand js-scroll" href="#page-top">NEWS</a>
 			<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
 				aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
 			<span></span>
@@ -59,7 +59,7 @@
 						<a class="nav-link js-scroll" href="#work">Work</a>
 					</li> -->
 					<li class="nav-item">
-						<a class="nav-link js-scroll" href="{{ url('/blog') }}">Blog</a>
+						<a class="nav-link js-scroll" href="#blog">Blog</a>
 					</li>
 					<!-- <li class="nav-item">
 						<a class="nav-link js-scroll" href="#contact">Contact</a>
@@ -557,7 +557,7 @@
 				<div class="col-md-4">
 					<div class="card card-blog">
 						<div class="card-img">
-							<a href="blog-single.html"><img src="{{ asset('/img/artikel/'.$data->foto.'')}}" alt="" class="img-fluid"></a>
+							<a href="/blog/{{$data->id}}"><img src="{{ asset('/img/artikel/'.$data->foto.'')}}" alt="" class="img-fluid"></a>
 						</div>
 						<div class="card-body">
 							<div class="card-category-box">
@@ -565,7 +565,7 @@
 									<h6 class="category">{{ $data->kategori->nama }}</h6>
 								</div>
 							</div>
-							<h3 class="card-title"><a href="blog-single.html">{{ $data->judul}}</a></h3>
+							<h3 class="card-title"><a href="/blog/{{$data->id}}">{!! str_limit($data->judul,50) !!}</a></h3>
 							<p class="card-description">
 								{!! str_limit($data->isi) !!}
 							</p>
@@ -578,6 +578,16 @@
 					</div>
 				</div>
 				@endforeach
+			</div>
+			<div class="row">
+				<div class="col-md-5"></div>
+				<div class="col-md-2" align="center">
+					<button class="btn btn-primary">
+						<a href="{{ url('/blog') }}"><span style="color: white;">View More</span></a>
+						
+					</button>
+				</div>
+				<div class="col-md-5"></div>
 			</div>
 		</div>
 	</section>
